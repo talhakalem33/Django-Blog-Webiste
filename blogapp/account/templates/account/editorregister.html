@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+<style>
+    .box {
+        border: 1px solid #b3b3b3;
+        border-radius: 10px;
+        box-shadow: 5px 5px 78px 0px #969696;
+    }
+</style>
+{% endblock %}
+
+{% block title %}Kayıt Ol{% endblock %}
+
+{% block content %}
+<div class="container-fluid ">
+    <div class="row">
+        <div style="height: 20px;"></div>
+    </div>
+    <div class="row">
+
+        <div class="col-sm-0 col-md-0 col-lg-3 col-xl-3"></div>
+
+
+        <div class="col-sm-0 col-md-0 col-lg-6 col-xl-6">
+            <div class="container-fluid box">
+                <div class="row">
+                    <h1 class="text-center">
+                        Editörlük Başvurusu Yap
+                    </h1>
+                </div>
+                <div class="row">
+                    <div style="height: 20px;"></div>
+                </div>
+
+                <div class="row">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% if error %}
+                        <div class="alert alert-danger" role="alert">
+                            {{error}}
+                        </div>
+                        {%endif%}
+
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label" style="font-weight: bold;">İsim</label>
+                            <input type="text" class="form-control" name="firstname" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="lastname" class="form-label" style="font-weight: bold;">Soyisim</label>
+                            <input type="text" class="form-control" name="lastname" required>
+                            <br><h6 style="font-weight: lighter;">Kullanıcı adın "isim_soyisim"(tüm harfler küçük) olacak.</h6>
+                            <h6 style="font-weight: lighter;">Eğer 2 İsmin varsa kullanıcı adın "1.isim2.isim_soyisim olacak"</h6>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label" style="font-weight: bold;">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label" style="font-weight: bold;">Şifre</label>
+                            <input type="password" class="form-control" name="password" required><br>
+                            <h6 style="font-weight: lighter;">Parolanız diğer kişisel bilgileriniz ile çok benzer olamaz. <br>
+                                Parolanız en az 8 karakter içermek zorundadır. <br>
+                                Parolanız yaygın olarak kullanılan bir parola olamaz. <br>
+                                Parolanız tamamıyla sayısal olamaz.</h6>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="repassword" class="form-label" style="font-weight: bold;">Tekrar Şifre</label>
+                            <input type="password" class="form-control" name="repassword" required>
+                        </div>
+
+                        <input type="submit" value="Register" class="btn btn-primary"
+                            style="margin-left: 50%; margin-right: 50%;">
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div style="height: 20px;"></div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-0 col-md-0 col-lg-3 col-xl-3"></div>
+
+
+
+
+
+
+    </div>
+</div>
+{% endblock %}

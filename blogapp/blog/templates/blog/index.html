@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block style %}
+<style>
+    .box {
+        border: 1px solid #b3b3b3;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        /* Animasyonlu geçiş */
+    }
+
+    .box:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Gölge efekti */
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div style="height: 20px;"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
+        <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <h4>Yeni Makaleler</h4>
+                    <hr>
+                </div>
+
+
+                <div class="row box">
+                    <h5 class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non risus ut leo
+                        aliquet
+                        faucibus in ac orci.</h5><br>
+                    <h6 class="text"><strong>Yazar:</strong>Talha Kalem <strong>Tarih:</strong> 12.12.23 </h6>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
+    </div>
+
+</div>
+
+{% endblock %}

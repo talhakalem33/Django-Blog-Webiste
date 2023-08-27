@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Hesabım{% endblock %}
+
+{% block style %}
+<style>
+    .box {
+        border: 1px solid #b3b3b3;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        /* Animasyonlu geçiş */
+    }
+
+    .box:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Gölge efekti */
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+{% for blog in inactiveblogs %}
+<div class="container-fluid">
+    <div class="row">
+        <div style="height: 20px;"></div>
+    </div>
+    <div class="row box">
+        <h5 class="text">{{blog.title}}</h5><br>
+        <h6 class="text"><strong>Yazar:</strong>{{blog.author}} <strong>Tarih:</strong> 12.12.23 </h6>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

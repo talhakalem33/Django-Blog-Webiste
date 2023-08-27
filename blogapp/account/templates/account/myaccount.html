@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Hesabım{% endblock %}
+
+{% block style %}
+<style>
+    .box {
+        border: 1px solid #b3b3b3;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .btn{
+        height: 100%;
+        width: 100%;
+        
+    }
+    .btn:hover{
+        box-shadow: 0 8px 16px rgb(140, 197, 243);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div style="height: 20px;"></div>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
+
+        <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+            <div class="box">
+                <h2 class="text-center">Hesabım</h2>
+                <p class="text-center"> Kullanıcı Adı: {{ user.username }}</p>
+                <p class="text-center">Email: {{ user.email }}</p>
+                {% if user.userjob.job == "editor" %}
+                <p class="text-center">İş: Kullanıcı</p>
+                {% else %}
+                <p class="text-center">İş: Editör</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
+
+    </div>
+    
+    <div class="row">
+        <div style="height: 20px;"></div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
+
+        <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10">
+            <button onclick="window.location.href='{% url 'inactiveblog' %}'" type="button" class="btn btn-primary">Makaleler</button>
+        </div>
+
+        <div class="col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
